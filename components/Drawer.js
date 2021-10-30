@@ -13,7 +13,7 @@ export default function Drawer({isOpen, toggleCart, setIsOpen}){
             {isOpen ? <div onClick={() => setIsOpen(false)} className="h-screen w-screen fixed top-0 bg-black opacity-25 z-10"></div> : ""}
             <div className={`drawer ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                 <div className="mr-auto">
-                    <span onClick={toggleCart}><AiOutlineClose className='close-drawer' size='32'/></span>
+                    <span onClick={toggleCart}><AiOutlineClose className='close-drawer' size='36'/></span>
                 </div>
                 <div className="cart-contents">
                     <h4 className="font-bold mb-8">Cart</h4>

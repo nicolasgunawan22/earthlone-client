@@ -1,3 +1,4 @@
+
 @tailwind base;
 
 @layer base {
@@ -34,6 +35,11 @@
   button {
     @apply text-sm;
   }
+  nav a,
+  input,
+  select {
+    outline: 0;
+  }
 }
 
 @tailwind components;
@@ -44,31 +50,38 @@
     transition-all ease-linear cursor-pointer
   }
   .menu-drawer {
-    @apply bg-white text-black h-screen w-2/6
+    @apply bg-white text-black h-full w-full
     fixed top-0 left-0 
     transform transition-all ease-linear z-20
-    shadow-2xl p-6
+    shadow-2xl px-4 py-6
   }
   .search {
-    @apply my-auto z-0  cursor-pointer p-2
+    @apply my-auto z-0  cursor-pointer p-2 mx-2
     hover:bg-black hover:text-white
     transition-all ease-linear self-center
   }
+  .search-bar {
+    @apply transition-all duration-300 ease-linear
+  }
+  .search-bar-button {
+    @apply flex bg-white text-black m-auto p-2
+    hover:bg-black hover:text-white transition-all ease-linear
+  }
   .shop {
-    @apply text-center my-auto z-0  cursor-pointer p-2
+    @apply text-center my-auto z-0 cursor-pointer p-2 mx-2
     hover:bg-black hover:text-white
     transition-all ease-linear
   }
   .brand {
-    @apply font-bold w-full z-0 p-2 cursor-pointer
+    @apply font-bold w-full z-0 p-2 cursor-pointer mx-2
   }
   .about {
-    @apply text-center my-auto z-0 cursor-pointer p-2
+    @apply text-center my-auto z-0 cursor-pointer p-2 mx-2
     hover:bg-black hover:text-white
     transition-all ease-linear
   }
   .cart {
-    @apply my-auto z-0  cursor-pointer p-2
+    @apply my-auto z-0 cursor-pointer p-2 mx-2
     hover:bg-black hover:text-white
     transition-all ease-linear
   }
@@ -78,27 +91,28 @@
     brightness-75 z-0 w-screen
   }
   .drawer {
-    @apply bg-white text-black h-screen w-11/12 lg:w-2/6 
+    @apply bg-white text-black h-full w-11/12 lg:w-2/6 
     fixed top-0 right-0 
     transform transition-all ease-linear z-20
     shadow-2xl flex flex-col text-center
   }
   .close-drawer {
-    @apply bg-black text-white p-2
-    transition-all ease-linear m-8 
-    cursor-pointer hover:rounded-lg rounded-2xl
+    @apply p-2 m-8 
+    transition-all ease-linear cursor-pointer 
+    border-2 border-white
+    hover:border-2 hover:border-black hover:rounded-md
   }
   .shop-content {
     @apply grid grid-cols-2 md:grid-cols-4 
     
   }
   .footer-contents {
-    @apply container mx-auto my-4 
+    @apply container m-auto p-4
     flex flex-col justify-center text-center
-    md:flex-row md:justify-evenly md:text-left
+    md:flex-row w-full
   }
   .footer-social {
-    @apply flex flex-col mb-4
+    @apply flex flex-col mb-4 mx-10 text-left
   }
 }
 
