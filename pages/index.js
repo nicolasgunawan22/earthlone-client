@@ -1,17 +1,26 @@
 import Head from 'next/head'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation'
 import Drawer from '../components/Drawer'
 import Footer from '../components/Footer'
 import { AiOutlineClose } from 'react-icons/ai'
 
+import { useQuery } from "@apollo/client";
+import { getProductsQuery } from '../data/queries'
+
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
+  const [cached, setCached] = useState(true);
+  const { data, loading, error } = useQuery(getProductsQuery, { ssr: true });
 
   const toggleCart = () => {
     setIsOpen(!isOpen)
   }
-
+  useEffect(() => {
+      if (loading) setCached(false);
+  }, [loading]);
+  if(data === "undefined")  return "Loading..."
+  if (loading) return "Loading...";
   return (
     <div className=''>
       <Head>
@@ -24,8 +33,35 @@ export default function Home() {
         <section>
           <Navigation toggleCart={toggleCart} />
           <div className="bg-gray-500 h-96 flex flex-col justify-center text-center relative">
-            <h1 className="text-black font-semibold z-0 relative"> Welcome to <span className="text-white font-semibold">Earthlone</span></h1>
-            <h6 className="text-white">Right now, <span className="text-white">Earth</span> is <span className="text-white">alone</span>. Earth is your only home.</h6>
+            <img className="brightness-50 w-full h-full cover" src="https://images.unsplash.com/photo-1488188840666-e2308741a62f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=874&q=80" alt="" />
+            <div className="absolute m-auto w-full">
+              <h1 className="text-green-400 font-semibold z-0 relative"> Welcome to <span className="text-white font-semibold">Earthlone</span></h1>
+            </div>
+          </div>
+          <div className="">
+            <div className="container m-auto my-12">
+            <h6 className="font-bold text-center text-green-600 mb-6 uppercase">The Idea Behind Our Name</h6>
+            <h3 className="font-serif font-bold text-center my-2">There is No Other Earth</h3>
+            <h5 className="flex mx-auto my-2 md:w-3/6 text-center">"Right now, Earth is alone. Earth is the only home we have. So we have to take care of it."</h5>
+            </div>
+          </div>
+          <div className="bg-green-900 grid grid-cols-4">
+            <div className="col-span-3 p-12"> 
+              <h1 className="text-white font-bold mb-4">We Provide</h1>
+              <h6 className="text-white font-light">Eco-friendly products for everyone to participate in reducing environmental damage</h6>
+            </div>
+            {/* <div className="flex">
+              {data.products.map(product => (
+                <div className="bg-white w-3/4">
+                  <img className="object-cover h-full" src={product.image} alt="" />
+                </div>
+              ))}
+            </div> */}
+          </div>
+          <div>
+            <div>
+
+            </div>
           </div>
         </section>
           <Drawer isOpen={isOpen} toggleCart={toggleCart} setIsOpen={setIsOpen}/>

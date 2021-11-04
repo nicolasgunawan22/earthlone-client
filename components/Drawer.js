@@ -23,7 +23,7 @@ export default function Drawer({isOpen, toggleCart, setIsOpen}){
                             <p className="font-semibold">Reusable Stainless Steel Straw Set</p>
                             <div className="flex">
                                 <button onClick={substract} className="mx-1 bg-black text-white h-8 w-8">-</button>
-                                <h7 className="mx-1 border-2 border-black h-8 w-8 text-center pt-0.5">{amount}</h7>
+                                <h6 className="mx-1 border-2 border-black h-8 w-8 text-center pt-0.5">{amount}</h6>
                                 <button onClick={add} className="mx-1 bg-black text-white h-8 w-8">+</button>
                             </div>
                         </div>
@@ -34,7 +34,7 @@ export default function Drawer({isOpen, toggleCart, setIsOpen}){
                             <p className="font-semibold">Bamboo Toothbrush Pack</p>
                             <div className="flex">
                                 <button onClick={substract} className="mx-1 bg-black text-white h-8 w-8">-</button>
-                                <h7 className="mx-1 border-2 border-black h-8 w-8 text-center pt-0.5">{amount}</h7>
+                                <h6 className="mx-1 border-2 border-black h-8 w-8 text-center pt-0.5">{amount}</h6>
                                 <button onClick={add} className="mx-1 bg-black text-white h-8 w-8">+</button>
                             </div>
                         </div>

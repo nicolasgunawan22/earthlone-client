@@ -4,8 +4,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily:{
-      sans: ['Poppins', 'sans-serif'],
-      serif: ['"PT Serif"', 'serif'],
+      sans: ['Inter', 'sans-serif'],
+      serif: ['"Playfair"', 'serif'],
     },
     extend: {},
   },

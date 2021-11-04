@@ -1,15 +1,30 @@
-import React, {useState} from 'react'
+import React, { useEffect, useState } from "react";
 import Head from 'next/head'
+
+
 import Navigation from '../components/Navigation'
 import Drawer from '../components/Drawer'
 import Footer from '../components/Footer'
 
-export default function Shop() {
-    const [isOpen, setIsOpen] = useState(false);
+import { useQuery } from "@apollo/client";
+import { getProductsQuery } from '../data/queries'
 
+export default function Shop() {
+    
+    const { data, loading, error } = useQuery(getProductsQuery, { ssr: true });
+    const [cached, setCached] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
+    
+    useEffect(() => {
+        if (loading) setCached(false);
+    }, [loading]);
+
+    if (loading) return "Loading...";
+    
     const toggleCart = () => {
       setIsOpen(!isOpen)
     }
+    console.log(data.products)
 
     return (
         <div className="w-full">
@@ -26,31 +41,37 @@ export default function Shop() {
                     </div>
                 </div>
                 <section className="shop-content">
+                    {
+                        data.products.map(product => (
+                            <div  key={product.id} className="box-border border-2 border-black m-2 aspect-w-2 aspect-h-3">
+                                <div className="flex flex-col">
+                                    <img className="bg-gray-400 h-4/6 lg:h-5/6 object-cover" src={product.image} alt="" />
+                                    {/* <div className="bg-gray-400 h-4/6 lg:h-5/6"></div> */}
+                                    <h6 className="font-bold text-center text-base">{product.name}</h6>  
+                                    <p className="text-center m-2">{product.description}</p>  
+                                </div>
+                            </div>
+                        ))   
+                    }
                     
-                    <div className="box-border border-2 border-black m-2 aspect-w-2 aspect-h-3">
+                    {/* <div className="box-border border-2 border-black m-2 aspect-w-2 aspect-h-3">
                         <div className="flex flex-col">
                             <div className="bg-gray-400 h-4/6 lg:h-5/6"></div>
-                            <h7 className="font-bold text-center text-sm">Reusable Stainless Steel Straw Set</h7>  
+                            <h6 className="font-bold text-center text-sm">Bamboo Toothbrush Pack </h6>  
                         </div>
                     </div>
                     <div className="box-border border-2 border-black m-2 aspect-w-2 aspect-h-3">
                         <div className="flex flex-col">
                             <div className="bg-gray-400 h-4/6 lg:h-5/6"></div>
-                            <h7 className="font-bold text-center text-sm">Bamboo Toothbrush Pack </h7>  
+                            <h6 className="font-bold text-center text-sm">Reusable Stainless Steel Straw Set</h6>  
                         </div>
                     </div>
                     <div className="box-border border-2 border-black m-2 aspect-w-2 aspect-h-3">
                         <div className="flex flex-col">
                             <div className="bg-gray-400 h-4/6 lg:h-5/6"></div>
-                            <h7 className="font-bold text-center text-sm">Reusable Stainless Steel Straw Set</h7>  
+                            <h6 className="font-bold text-center text-sm">Reusable Stainless Steel Straw Set</h6>  
                         </div>
-                    </div>
-                    <div className="box-border border-2 border-black m-2 aspect-w-2 aspect-h-3">
-                        <div className="flex flex-col">
-                            <div className="bg-gray-400 h-4/6 lg:h-5/6"></div>
-                            <h7 className="font-bold text-center text-sm">Reusable Stainless Steel Straw Set</h7>  
-                        </div>
-                    </div>
+                    </div> */}
                     {/* <div className="box-border bg-gray-400 border-black m-2 aspect-w-2 aspect-h-3"></div>
                     <div className="box-border bg-gray-400 border-black m-2 aspect-w-2 aspect-h-3"></div>
                     <div className="box-border bg-gray-400 border-black m-2 aspect-w-2 aspect-h-3"></div> */}
@@ -62,3 +83,22 @@ export default function Shop() {
         </div>
     )
 }
+
+// export async function getServerSideProps() {
+//     const { data } = await client.query({
+//       query: gql`
+//         query Products {
+//           products {
+//             id
+//             name
+//           }
+//         }
+//       `,
+//     });
+  
+//     return {
+//       props: {
+//         products: data.products,
+//       },
+//     };
+//   }

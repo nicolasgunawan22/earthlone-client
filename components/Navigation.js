@@ -31,7 +31,7 @@ export default function Navigation({toggleCart}) {
     
     const Shop = () => <a href='/shop' className='shop'>Shop</a>;
     
-    const Brand = () => <h4 className='brand'><span className='cursor-pointer' onClick={() => {location.href="/"}}>Earthlone</span></h4>;
+    const Brand = () => <h4 className='brand'><span className='cursor-pointer my-auto flex justify-center' onClick={() => {location.href="/"}}> <img className="w-5/6 lg:w-5/12 p-0 h-full" src="images/logo-black.svg" alt="" /> </span></h4>;
 
     const About = () => <a href='/about' className='about'>About</a>;
     const Cart = ({toggleCart}) => <span className='cart' onClick={toggleCart}><BsFillCartFill size='18'/></span>
@@ -40,7 +40,7 @@ export default function Navigation({toggleCart}) {
     const MenuDrawerButton = ({toggleMenuDrawer}) => <span className='menu-drawer-button' onClick={toggleMenuDrawer}><MdTableRows size='20'/></span>
    
     return (
-            <div className='container mx-auto p-4 justify-center w-full grid grid-cols-3 select-none'>
+            <nav className='container mx-auto p-4 justify-center w-full grid grid-cols-3 select-none'>
                 <div className="flex md:hidden justify-start"><MenuDrawerButton toggleMenuDrawer={toggleMenuDrawer} /></div>
                 <div className="hidden m-auto md:flex justify-start w-full">
                     {isSearchOpen ? (
@@ -60,7 +60,7 @@ export default function Navigation({toggleCart}) {
                     )}
                     <div className="hidden md:flex"><Shop /></div>
                 </div>
-                <div className="justify-self-center"><Brand /></div>
+                <div className="my-auto"><Brand /></div>
                 <div className="flex justify-end m-auto w-full">
                     <div className="hidden md:flex"><About /></div>
                     <div className="flex "><Cart toggleCart={toggleCart} /></div>
@@ -77,6 +77,6 @@ export default function Navigation({toggleCart}) {
                     About={About}
                     
                 />
-            </div>
+            </nav>
     )
 }
