@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 export default function Footer() {
     const name = null
@@ -20,9 +21,9 @@ export default function Footer() {
                 </div>
                 <div className="footer-social">
                     <h6 className="font-bold">Social</h6>
-                    <a className="py-1" href="https://www.instagram.com/earthlone.id/">Instagram</a>
-                    <a className="py-1" href="/">Twitter</a>
-                    <a className="py-1" href="/">TikTok</a>
+                    <Link href="https://www.instagram.com/earthlone.id/"><a className="py-1" target="_blank">Instagram</a></Link>
+                    <Link href="/"><a className="py-1" target="_blank">Twitter</a></Link>
+                    <Link href="https://www.tiktok.com/@earthlone.id"><a className="py-1" target="_blank">TikTok</a></Link>
                 </div>
                 {/* <div className="footer-social">
                     <h6 className="font-bold">Newsletter</h6>

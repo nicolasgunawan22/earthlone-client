@@ -2,13 +2,17 @@ import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { FaSearch } from 'react-icons/fa';
 
-export default function MenuDrawer({ isDrawerOpen, setIsDrawerOpen, toggleMenuDrawer, toggleSearch, isSearchOpen, MenuDrawerButton, Search, Shop, About }) {
+export default function MenuDrawer({ isDrawerOpen, setIsDrawerOpen, toggleMenuDrawer, toggleSearch, isSearchOpen, MenuDrawerButton, Brand, Search, Shop, About }) {
     
     return (
         <div>
             <div className={`menu-drawer ${isDrawerOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                 <div className="flex flex-col">
-                    <span className="flex justify-start p-0"><MenuDrawerButton toggleMenuDrawer={toggleMenuDrawer} /></span>
+                    <div className="grid grid-cols-3 mb-6">
+                        <span className="flex justify-start"><MenuDrawerButton toggleMenuDrawer={toggleMenuDrawer} /></span>
+                        <Brand />
+                    </div>
+                    
                     <div className="flex justify-center w-full">
                         {isSearchOpen ? (
                             <div className="flex search transition-all ease-linear" onClick={toggleSearch}><AiOutlineClose /></div>

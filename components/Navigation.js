@@ -31,7 +31,7 @@ export default function Navigation({toggleCart}) {
     
     const Shop = () => <a href='/shop' className='shop'>Shop</a>;
     
-    const Brand = () => <h4 className='brand'><span className='cursor-pointer my-auto flex justify-center' onClick={() => {location.href="/"}}> <img className="w-5/6 lg:w-5/12 p-0 h-full" src="images/logo-black.svg" alt="" /> </span></h4>;
+    const Brand = () => <h4 className='brand'><span className='cursor-pointer my-auto flex justify-center' onClick={() => {location.href="/"}}> <img className="p-0 sm:h-10" src="images/logo-black.svg" alt="" /> </span></h4>;
 
     const About = () => <a href='/about' className='about'>About</a>;
     const Cart = ({toggleCart}) => <span className='cart' onClick={toggleCart}><BsFillCartFill size='18'/></span>
@@ -72,6 +72,7 @@ export default function Navigation({toggleCart}) {
                     toggleSearch={toggleSearch}
                     isSearchOpen={isSearchOpen}
                     MenuDrawerButton={MenuDrawerButton}
+                    Brand={Brand}
                     Search={Search}
                     Shop={Shop}
                     About={About}
