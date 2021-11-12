@@ -44,7 +44,7 @@ export default function Admin() {
           </Head>
           <main>
               <Navigation toggleCart={toggleCart} />
-              <form action="" onSubmit={handleOnSubmit} className='flex flex-col border-2 border-black w-80 m:w-96 mx-auto p-4 my-4'>
+              {/* <form action="" onSubmit={handleOnSubmit} className='flex flex-col border-2 border-black w-80 m:w-96 mx-auto p-4 my-4'>
                   <h5 className="text-center font-semibold mb-4">Add Product</h5>
                   <label className="m-2" htmlFor="">Product Name</label>
                   <input className="border-2 border-black m-2 p-2" type="text" name="name" onChange={(e) => setPostData({ ...postData, name: e.target.value })}/>
@@ -52,19 +52,10 @@ export default function Admin() {
                   <input className="border-2 border-black m-2 p-2" type="text" name="description" onChange={(e) => setPostData({ ...postData, description: e.target.value })}/>
                   <label className="m-2" htmlFor="">Image</label>
                   <input className="border-2 border-black m-2 p-2" type="text" name="image" onChange={(e) => setPostData({ ...postData, image: e.target.value })}/>
-                  {/* <div className="m-2 text-center">
-                      <FileBase64  type="file" multiple={false} onDone={({base64}) => setPostData({...postData, image: base64 })} />
-                      {postData.image ? (
-                          <img className="mx-auto pt-2" src={postData.image} alt="selected image"/>
-
-                      ):(
-                          <div className="flex flex-wrap m-auto justify-center content-center bg-gray-400 h-40 mt-2"><p>Image Preview</p></div>
-                      )}
-                  </div> */}
                   <button className='bg-gray-600 text-white p-2 m-2 hover:bg-black transition-all' type='submit'>Submit</button>
-              </form>
+              </form> */}
               <Drawer isOpen={isOpen} toggleCart={toggleCart} setIsOpen={setIsOpen}/>
-              <Footer />
+              {/* <Footer /> */}
           </main>
 
       </div>

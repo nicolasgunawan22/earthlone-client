@@ -18,13 +18,52 @@ export default function Shop() {
     useEffect(() => {
         if (loading) setCached(false);
     }, [loading]);
-
-    if (loading) return "Loading...";
+    
     
     const toggleCart = () => {
-      setIsOpen(!isOpen)
-    }
-    console.log(data.products)
+        setIsOpen(!isOpen)
+      }
+
+    if (loading) return (
+       <div>
+            <Navigation toggleCart={toggleCart} />
+                <div className="bg-gray-400 w-full h-40 mb-8">
+                    <div className="container mx-auto flex justify-center h-full" >
+                        <h3 className="w-full text-center m-auto font-bold">All Products</h3>
+                    </div>
+                </div>
+            <div className="shop-content">
+                <div className="border border-gray-300 shadow rounded-md w-56 mx-auto">
+                    <div className="animate-pulse flex flex-col">
+                        <div className="h-80 bg-gray-300 w-full"></div>
+                        <div className="mt-2 mb-2 mx-auto h-2 bg-gray-300 w-11/12"></div>
+                        <div className="mb-2 mx-auto h-2 bg-gray-300 w-11/12"></div>
+                    </div>
+                </div>
+                <div className="border border-gray-300 shadow rounded-md w-56 mx-auto">
+                    <div className="animate-pulse flex flex-col">
+                        <div className="h-80 bg-gray-300 w-full"></div>
+                        <div className="mt-2 mb-2 mx-auto h-2 bg-gray-300 w-11/12"></div>
+                        <div className="mb-2 mx-auto h-2 bg-gray-300 w-11/12"></div>
+                    </div>
+                </div>
+                <div className="border border-gray-300 shadow rounded-md w-56 mx-auto">
+                    <div className="animate-pulse flex flex-col">
+                        <div className="h-80 bg-gray-300 w-full"></div>
+                        <div className="mt-2 mb-2 mx-auto h-2 bg-gray-300 w-11/12"></div>
+                        <div className="mb-2 mx-auto h-2 bg-gray-300 w-11/12"></div>
+                    </div>
+                </div>
+                <div className="border border-gray-300 shadow rounded-md w-56 mx-auto">
+                    <div className="animate-pulse flex flex-col">
+                        <div className="h-80 bg-gray-300 w-full"></div>
+                        <div className="mt-2 mb-2 mx-auto h-2 bg-gray-300 w-11/12"></div>
+                        <div className="mb-2 mx-auto h-2 bg-gray-300 w-11/12"></div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    );
 
     return (
         <div className="w-full">
