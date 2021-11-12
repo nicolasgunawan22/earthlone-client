@@ -37,6 +37,11 @@ export default function Home() {
             <img className="brightness-50 w-full h-full cover" src="https://images.unsplash.com/photo-1488188840666-e2308741a62f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=874&q=80" alt="" />
             <div className="absolute m-auto w-full">
               <h2 className="text-green-400 font-semibold z-0 relative"> Welcome to <span className="text-white font-semibold">Earthlone</span></h2>
+              <Link href="https://www.tokopedia.com/earthlone">
+                  <button target="_blank" className="mt-6 bg-green-300 shadow-lg rounded-full px-4 py-2 cursor-pointer hover:bg-green-100 focus:border-2 focus:border-green-500">
+                    <img className="h-6 mx-auto" src="/images/logo-tokopedia.svg" alt="" />
+                  </button>
+              </Link>
             </div>
           </div>
           <div className="">
@@ -70,15 +75,15 @@ export default function Home() {
           </div>
           <div className="bg-gray-100">
             <div className="py-10 px-4">
-              <div className="text-left">
+              <div className="text-center">
                 <h5 className="font-bold mb-2">Explore Our Products</h5>
                 <Link href="/shop">
                   <button target="_blank" className="mb-6 bg-green-600 text-white shadow-lg rounded-full px-4 py-2 cursor-pointer hover:bg-green-100 focus:border-2 focus:border-green-500">
-                    Shop
+                    Products
                   </button>
                 </Link>
               </div>
-              <div className="text-right">
+              <div className="text-center">
                 <h5 className="font-bold mb-2">Visit Our Store</h5>
                 <Link href="https://www.tokopedia.com/earthlone">
                   <button target="_blank" className="mb-6 bg-green-300 shadow-lg rounded-full px-4 py-2 cursor-pointer hover:bg-green-100 focus:border-2 focus:border-green-500">

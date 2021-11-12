@@ -103,8 +103,7 @@
     hover:border-2 hover:border-black hover:rounded-md
   }
   .shop-content {
-    @apply grid grid-cols-2 md:grid-cols-4 
-    
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
   }
   .footer-contents {
     @apply container m-auto p-4

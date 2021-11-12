@@ -22,13 +22,13 @@ export default function About() {
 
             <main>
                 <Navigation toggleCart={toggleCart} />
-                <div className="bg-gray-500 h-48 flex justify-center"><h1 className="my-auto text-white"> <span className="font-semibold">About</span> Us</h1></div>
+                <div className="bg-gray-500 h-48 flex justify-center"><h2 className="my-auto text-white"> <span className="font-semibold">About</span> Us</h2></div>
                 <div className="text-center container mx-auto my-4 px-8">
-                    <h3 className="sticky font-semibold mb-4">Who Are We</h3>
-                    <h6 className="mb-6">A small project and business that selling eco-friendly products, where a portion of our revenue are going to donation to support important environmental causes.</h6>
-                    <h3 className="sticky font-semibold mb-4">Our Vision</h3>
+                    <h4 className="sticky font-semibold mb-4">Who Are We</h4>
+                    <h6 className="mb-6">A small project to raise awareness of the environment and provide solutions to apply that concern.</h6>
+                    <h4 className="sticky font-semibold mb-4">Our Vision</h4>
                     <h6 className="mb-6">To be a pioneer in sustainable living in Indonesia. </h6>
-                    <h3 className="sticky font-semibold mb-4">Our Mission</h3>
+                    <h4 className="sticky font-semibold mb-4">Our Mission</h4>
                     <h6 className="mb-6">To accelerate the distribution of eco-friendly products in Indonesia. </h6>
                 </div>
                 <Drawer isOpen={isOpen} toggleCart={toggleCart} setIsOpen={setIsOpen}/>

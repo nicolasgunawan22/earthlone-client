@@ -30,7 +30,7 @@ export default function MenuDrawer({ isDrawerOpen, setIsDrawerOpen, toggleMenuDr
                             null
                         )}
                     </div>
-                    <Shop />
+                    <Shop/>
                     <About/>
                 </div>
             </div>
