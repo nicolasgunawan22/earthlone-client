@@ -20,12 +20,12 @@ export default function Home() {
   useEffect(() => {
       if (loading) setCached(false);
   }, [loading]);
-  if(data === "undefined")  return "Loading..."
+  
   if (loading) return (
     <div>
       <Navigation toggleCart={toggleCart} />
-      <div class="flex items-center justify-center ">
-          <div class="w-16 h-16 border-b-2 border-gray-900 rounded-full animate-spin"></div>
+      <div className="flex items-center justify-center ">
+          <div className="w-16 h-16 border-b-2 border-gray-900 rounded-full animate-spin"></div>
       </div>
     </div>
   );

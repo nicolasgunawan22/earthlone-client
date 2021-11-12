@@ -9,7 +9,7 @@ const getProductsQuery = gql`
             description
             createdAt
         }
-    }
+    },
 `
 const getProductQuery = gql`
     query($id: ID!){
