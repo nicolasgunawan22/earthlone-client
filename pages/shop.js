@@ -81,7 +81,7 @@ export default function Shop() {
                 </div>
                 <section className="shop-content">
                     {
-                        data.products.map(product => (
+                        data?.products?.map(product => (
                             <div  key={product.id} className="flex flex-col justify-center my-4">
                                 <div className="w-56 m-auto rounded-xl shadow-xl">
                                     <img className="h-80 object-cover object-top m-auto rounded-t-xl" src={product.image} alt="" />
