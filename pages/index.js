@@ -7,7 +7,7 @@ import { AiOutlineClose } from 'react-icons/ai'
 
 import { useQuery } from "@apollo/client";
 import { getProductsQuery } from '../data/queries'
-import Link from 'next/Link';
+import Link from 'next/link'
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
