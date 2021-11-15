@@ -29,7 +29,7 @@ export default function Navigation({toggleCart}) {
 
     const Search = ({toggleSearch}) =>  <span className='search' onClick={toggleSearch}><FaSearch size='14'/></span>
     
-    const Shop = () => <a href='/shop' className='shop'>Shop</a>;
+    const Shop = () => <a href='/shop' className='shop'>Products</a>;
     
     const Brand = () => <h4 className='brand'><span className='cursor-pointer my-auto flex justify-center' onClick={() => {location.href="/"}}> <img className="p-0 sm:h-10" src="images/logo-black.svg" alt="" /> </span></h4>;
 

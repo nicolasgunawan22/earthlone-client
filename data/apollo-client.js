@@ -3,8 +3,8 @@ const isServer = typeof window === "undefined";
 
 const link = createHttpLink({
     // uri: 'https://confident-galileo-9dbd7e.netlify.app',
-    // uri: 'https://earthlone-api.herokuapp.com/',
-    uri: 'http://localhost:4000/graphql',
+    uri: 'https://earthlone-api.herokuapp.com/graphql',
+    // uri: 'http://localhost:4000/graphql',
     fetchOptions: {
         mode: 'cors',
     },
