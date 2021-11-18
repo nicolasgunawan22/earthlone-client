@@ -11,24 +11,24 @@ import Link from 'next/link'
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
-  const [cached, setCached] = useState(true);
-  const { data, loading, error } = useQuery(getProductsQuery, { ssr: true });
-
   const toggleCart = () => {
     setIsOpen(!isOpen)
   }
-  useEffect(() => {
-      if (loading) setCached(false);
-  }, [loading]);
+  // const [cached, setCached] = useState(true);
+  // const { data, loading, error } = useQuery(getProductsQuery, { ssr: true });
+
+  // useEffect(() => {
+  //     if (loading) setCached(false);
+  // }, [loading]);
   
-  if (loading) return (
-    <div>
-      <Navigation toggleCart={toggleCart} />
-      <div className="flex items-center justify-center ">
-          <div className="w-16 h-16 border-b-2 border-gray-900 rounded-full animate-spin"></div>
-      </div>
-    </div>
-  );
+  // if (loading) return (
+  //   <div>
+  //     <Navigation toggleCart={toggleCart} />
+  //     <div className="flex items-center justify-center ">
+  //         <div className="w-16 h-16 border-b-2 border-gray-900 rounded-full animate-spin"></div>
+  //     </div>
+  //   </div>
+  // );
   return (
     <div className=''>
       <Head>
@@ -45,7 +45,7 @@ export default function Home() {
             <div className="absolute m-auto w-full">
               <h2 className="text-green-400 font-semibold z-0 relative md:text-5xl"> Welcome to <span className="text-white font-semibold">Earthlone</span></h2>
               <Link href="https://www.tokopedia.com/earthlone">
-                  <button target="_blank" className="mt-6 bg-green-300 shadow-lg rounded-full px-4 py-2 cursor-pointer hover:bg-green-100 focus:border-2 focus:border-green-500">
+                  <button data-testid='tokopedia-button' target="_blank" className="mt-6 bg-green-300 shadow-lg rounded-full px-4 py-2 cursor-pointer hover:bg-green-100 focus:border-2 focus:border-green-500" >
                     <img className="h-6 md:h-8 mx-auto" src="/images/logo-tokopedia.svg" alt="" />
                   </button>
               </Link>

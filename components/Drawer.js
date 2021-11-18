@@ -2,16 +2,16 @@ import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 
 export default function Drawer({isOpen, toggleCart, setIsOpen}){
-    const amount = 0;
+    // const amount = 0;
 
-    const substract = () => {return amount - 1}
-    const add = () => {return amount + 1}
-    // console.log(amount)
+    // const substract = () => {return amount - 1}
+    // const add = () => {return amount + 1}
+    // // console.log(amount)
     
     return (
         <div> 
-            {isOpen ? <div onClick={() => setIsOpen(false)} className="h-screen w-screen fixed top-0 bg-black opacity-25 z-10"></div> : ""}
-            <div className={`drawer ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+            {isOpen ? <button onClick={toggleCart} aria-label="closing-button" className="h-screen w-screen fixed top-0 bg-black opacity-25 z-10"></button> : ""}
+            <div id={`${isOpen ? 'drawer ' : ''}`} data-testid={`${isOpen ? 'drawer ' : ''}`} className={`drawer ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                 <div className="mr-auto">
                     <span onClick={toggleCart}><AiOutlineClose className='close-drawer' size='36'/></span>
                 </div>

@@ -27,31 +27,31 @@ export default function Navigation({toggleCart}) {
         // console.log(isSearchOpen)
     }
 
-    const Search = ({toggleSearch}) =>  <span className='search' onClick={toggleSearch}><FaSearch size='14'/></span>
+    const Search = ({toggleSearch}) =>  <span data-testid="nav-button" aria-label="search-button" className='search' onClick={toggleSearch}><FaSearch size='14'/></span>
     
-    const Shop = () => <a href='/shop' className='shop'>Products</a>;
+    const Shop = () => <a data-testid="nav-button" href='/shop' className='shop'>Products</a>;
     
-    const Brand = () => <h4 className='brand'><span className='cursor-pointer my-auto flex justify-center' onClick={() => {location.href="/"}}> <img className="p-0 sm:h-10" src="images/logo-black.svg" alt="" /> </span></h4>;
+    const Brand = () => <h4 data-testid="nav-button" className='brand'><span className='cursor-pointer my-auto flex justify-center' data-testid="brand-button" onClick={() => {location.href="/"}}> <img className="p-0 sm:h-10" src="images/logo-black.svg" alt="" /> </span></h4>;
 
-    const About = () => <a href='/about' className='about'>About</a>;
-    const Cart = ({toggleCart}) => <span className='cart' onClick={toggleCart}><BsFillCartFill size='18'/></span>
+    const About = () => <a data-testid="nav-button" href='/about' className='about'>About</a>;
+    const Cart = ({toggleCart}) => <button data-testid="nav-button" aria-label="cart-button" className='cart' onClick={toggleCart}><BsFillCartFill size='18'/></button>
     
     
     const MenuDrawerButton = ({toggleMenuDrawer}) => <span className='menu-drawer-button' onClick={toggleMenuDrawer}><MdTableRows size='20'/></span>
    
     return (
-            <nav className='container mx-auto p-4 justify-center w-full grid grid-cols-3 select-none'>
+            <nav data-testid="navigation-bar" className='container mx-auto p-4 justify-center w-full grid grid-cols-3 select-none'>
                 <div className="flex md:hidden justify-start"><MenuDrawerButton toggleMenuDrawer={toggleMenuDrawer} /></div>
                 <div className="hidden m-auto md:flex justify-start w-full">
                     {isSearchOpen ? (
                         <div className="hidden md:flex search"  onClick={toggleSearch} ><AiOutlineClose/></div>
                     ):(
-                        <div className="hidden md:flex"><Search toggleSearch={toggleSearch} /></div>
+                        <button className="hidden md:flex"><Search toggleSearch={toggleSearch} /></button>
                     )}
                     {isSearchOpen ? (
                         <div className="search-bar">
                             <form className="flex border-2 border-black">
-                                <input className="appearance-none text-black w-40 px-2 border-0" type="text"/>
+                                <input className="appearance-none text-black w-40 px-2 border-0" type="text" data-testid="search-bar" placeholder='Type something here'/>
                                 <button className="search-bar-button" type="submit"><FaSearch size='14'/></button>
                             </form>
                         </div>
