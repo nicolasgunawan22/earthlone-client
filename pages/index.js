@@ -34,6 +34,7 @@ export default function Home() {
       <Head>
         <title>Earthlone</title>
         <meta name="description" content="Welcome to Earthlone. Buy premium eco-friendly products now. Let's protect our lonely Earth." />
+        <meta name="keywords" content="eco-friendly, products, earth, environment, toothbrush, straw"></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
