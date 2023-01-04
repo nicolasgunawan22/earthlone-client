@@ -1,4 +1,3 @@
-
 @tailwind base;
 
 @layer base {
@@ -44,74 +43,71 @@
   .menu-drawer-button {
     @apply flex justify-center my-auto z-0 p-2 
     hover:bg-green-900 hover:text-white
-    transition-all ease-linear cursor-pointer
+    transition-all ease-linear cursor-pointer;
   }
   .menu-drawer {
     @apply bg-white text-black h-full w-full
     fixed top-0 left-0 
     transform transition-all ease-linear z-20
-    shadow-2xl px-4 py-6 pt-4
+    shadow-2xl px-4 py-6 pt-4;
   }
   .search {
     @apply my-auto z-0  cursor-pointer p-2 mx-2
     hover:bg-green-900 hover:text-white
-    transition-all ease-linear self-center
+    transition-all ease-linear self-center;
   }
   .search-bar {
-    @apply transition-all duration-300 ease-linear
+    @apply transition-all duration-300 ease-linear;
   }
   .search-bar-button {
     @apply flex bg-white text-black m-auto p-2
-    hover:bg-green-900 hover:text-white transition-all ease-linear
+    hover:bg-green-900 hover:text-white transition-all ease-linear;
   }
   .shop {
     @apply text-center my-auto z-0 cursor-pointer p-2 mx-2
     hover:bg-green-900 hover:text-white
-    transition-all ease-linear
+    transition-all ease-linear;
   }
   .brand {
-    @apply font-bold w-full z-0 p-0 cursor-pointer my-auto
+    @apply font-bold w-full z-0 p-0 cursor-pointer my-auto;
   }
   .about {
     @apply text-center my-auto z-0 cursor-pointer p-2 mx-2
     hover:bg-green-900 hover:text-white
-    transition-all ease-linear
+    transition-all ease-linear;
   }
   .cart {
     @apply my-auto z-0 cursor-pointer p-2 mx-2
     hover:bg-green-900 hover:text-white
-    transition-all ease-linear
+    transition-all ease-linear;
   }
   .jumbotron {
     @apply h-96 flex flex-col justify-center text-center
     bg-gradient-to-r from-blue-300 via-green-200 to-green-500
-    brightness-75 z-0 w-screen
+    brightness-75 z-0 w-screen;
   }
   .new-arrivals {
-    @apply grid grid-cols-2
+    @apply grid grid-cols-2;
   }
   .drawer {
     @apply bg-white text-black h-full w-11/12 lg:w-2/6 
     fixed top-0 right-0 
     transform transition-all ease-linear z-20
-    shadow-2xl flex flex-col text-center
+    shadow-2xl flex flex-col text-center;
   }
   .close-drawer {
     @apply p-2 m-8 
     transition-all ease-linear cursor-pointer 
     border-2 border-white
-    hover:border-2 hover:border-black hover:rounded-md
-  }
-  .shop-content {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+    hover:border-2 hover:border-black hover:rounded-md;
   }
   .footer-contents {
     @apply container m-auto p-4
     flex flex-col justify-center text-center
-    md:flex-row w-full
+    md:flex-row w-full;
   }
   .footer-social {
-    @apply flex flex-col mb-4 mx-10 text-left
+    @apply flex flex-col mb-4 mx-10 text-left;
   }
 }
 

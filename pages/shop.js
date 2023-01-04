@@ -10,29 +10,27 @@ import { useQuery } from "@apollo/client";
 import { getProductsQuery } from '../data/queries'
 
 export default function Shop() {
-    
     const { data, loading, error } = useQuery(getProductsQuery, { ssr: true });
     const [cached, setCached] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
-    
+
     useEffect(() => {
         if (loading) setCached(false);
     }, [loading]);
-    
-    
+
     const toggleCart = () => {
         setIsOpen(!isOpen)
-      }
+    }
 
     if (loading) return (
-       <div>
+        <div>
             <Navigation toggleCart={toggleCart} />
-                <div className="bg-gray-400 w-full h-40 mb-8">
-                    <div className="container mx-auto flex justify-center h-full" >
-                        <h3 className="w-full text-center m-auto font-bold">All Products</h3>
-                    </div>
+            <div className="bg-gray-400 w-full h-40 mb-8">
+                <div className="container mx-auto flex justify-center h-full" >
+                    <h3 className="w-full text-center m-auto font-bold">All Products</h3>
                 </div>
-            <div className="shop-content">
+            </div>
+            <div className="flex">
                 <div className="border border-gray-300 shadow rounded-md w-56 mx-auto">
                     <div className="animate-pulse flex flex-col">
                         <div className="h-80 bg-gray-300 w-full"></div>
@@ -62,7 +60,7 @@ export default function Shop() {
                     </div>
                 </div>
             </div>
-       </div>
+        </div>
     );
 
     return (
@@ -74,70 +72,24 @@ export default function Shop() {
             </Head>
             <main className="w-full bg-gray-100">
                 <Navigation toggleCart={toggleCart} />
-                <div className="bg-gray-400 w-full h-40">
+                <div className="bg-gray-400 w-full h-32">
                     <div className="container mx-auto flex justify-center h-full">
                         <h3 className="w-full text-center m-auto font-bold">All Products</h3>
                     </div>
                 </div>
-                <section className="shop-content">
-                    {
-                        data?.products?.map(product => (
-                            <div  key={product.id} className="flex flex-col justify-center my-4">
-                                <div className="w-56 m-auto rounded-xl shadow-xl">
-                                    <img className="h-80 object-cover object-top m-auto rounded-t-xl" src={product.image} alt="" />
-                                    {/* <div className="bg-gray-400 h-4/6 lg:h-5/6"></div> */}
-                                    <p className="p-2 font-bold text-center">{product.name}</p>  
-                                    {/* <p className="text-sm text-center m-2">{product.description}</p>   */}
-                                </div>
+                <section className="flex mx-16 justify-center space-x-4">
+                    {data.products.map(product => (
+                        <div key={product.id} className="flex flex-col justify-center my-4">
+                            <div className="w-56 h-full m-auto rounded-xl shadow-xl">
+                                <img className="w-56 h-56 object-cover rounded-t-xl" src={product.image} alt="" />
+                                <p className="p-2 font-bold text-center">{product.name}</p>
                             </div>
-                        ))   
-                    }
-                    
-                    {/* <div className="box-border border-2 border-black m-2 aspect-w-2 aspect-h-3">
-                        <div className="flex flex-col">
-                            <div className="bg-gray-400 h-4/6 lg:h-5/6"></div>
-                            <h6 className="font-bold text-center text-sm">Bamboo Toothbrush Pack </h6>  
                         </div>
-                    </div>
-                    <div className="box-border border-2 border-black m-2 aspect-w-2 aspect-h-3">
-                        <div className="flex flex-col">
-                            <div className="bg-gray-400 h-4/6 lg:h-5/6"></div>
-                            <h6 className="font-bold text-center text-sm">Reusable Stainless Steel Straw Set</h6>  
-                        </div>
-                    </div>
-                    <div className="box-border border-2 border-black m-2 aspect-w-2 aspect-h-3">
-                        <div className="flex flex-col">
-                            <div className="bg-gray-400 h-4/6 lg:h-5/6"></div>
-                            <h6 className="font-bold text-center text-sm">Reusable Stainless Steel Straw Set</h6>  
-                        </div>
-                    </div> */}
-                    {/* <div className="box-border bg-gray-400 border-black m-2 aspect-w-2 aspect-h-3"></div>
-                    <div className="box-border bg-gray-400 border-black m-2 aspect-w-2 aspect-h-3"></div>
-                    <div className="box-border bg-gray-400 border-black m-2 aspect-w-2 aspect-h-3"></div> */}
-                    
+                    ))}
                 </section>
-                <Drawer isOpen={isOpen} toggleCart={toggleCart} setIsOpen={setIsOpen}/>
-                <Footer/>
+                <Drawer isOpen={isOpen} toggleCart={toggleCart} setIsOpen={setIsOpen} />
+                <Footer />
             </main>
         </div>
     )
 }
-
-// export async function getServerSideProps() {
-//     const { data } = await client.query({
-//       query: gql`
-//         query Products {
-//           products {
-//             id
-//             name
-//           }
-//         }
-//       `,
-//     });
-  
-//     return {
-//       props: {
-//         products: data.products,
-//       },
-//     };
-//   }
